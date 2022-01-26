@@ -1,4 +1,5 @@
 "use strict";
+
 alert(
   "You will be playing a best of 5 game of Rock, Paper and Scissors against the computer, highest score wins!\nGood Luck!!:D"
 );
