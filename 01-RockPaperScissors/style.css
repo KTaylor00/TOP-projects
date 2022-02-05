@@ -1,0 +1,23 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-container {
+  gap: 32px;
+}
+
+.play-comp-container {
+  gap: 100px;
+}
+
+.results {
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.reset {
+  margin-top: 32px;
+  margin-right: 20px;
+}

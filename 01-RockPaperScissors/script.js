@@ -1,9 +1,5 @@
 "use strict";
 
-alert(
-  "You will be playing a best of 5 game of Rock, Paper and Scissors against the computer, highest score wins!\nGood Luck!!:D"
-);
-
 const computerPlay = function () {
   const game = ["Rock", "Paper", "Scissors"];
   const random = game[Math.floor(Math.random() * game.length)];
@@ -12,11 +8,19 @@ const computerPlay = function () {
 
 let playerScore = 0;
 let computerScore = 0;
+const results = document.querySelector(".results");
 
 function playRound(playerSelection, computerSelection) {
-  const player =
-    playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
+  const player = playerSelection;
   const computer = computerSelection;
+
+  if (playerScore === 5) {
+    return (results.textContent = `Player Wins!`);
+  } else if (computerScore === 5) {
+    return (results.textContent = `It seems the computer has beaten you!`);
+  } else {
+    `It's a draw!`;
+  }
 
   if (player === "Rock" && computer === "Scissors") {
     playerScore++;
@@ -37,26 +41,30 @@ function playRound(playerSelection, computerSelection) {
     computerScore++;
     return `You lose! ${computer} beats ${player}`;
   } else {
-    return `No points scored!`;
+    return `No points scored`;
   }
 }
 
-function game() {
-  let i = 1;
-  while (i < 6) {
-    const playerSelection = prompt(`Round ${[i++]}: \nRock, Paper, Scissors`);
+const btns = document.querySelectorAll(".btn");
+
+const playerScoreDisplay = document.querySelector(".player-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const playerSelection = btn.textContent;
     const computerSelection = computerPlay();
-    alert(playRound(playerSelection, computerSelection));
-  }
-  alert(`Player Score = ${playerScore} \nComputer Score = ${computerScore}`);
 
-  if (computerScore > playerScore) {
-    alert(`Computer Wins!`);
-  } else if (computerScore > playerScore) {
-    alert(`Player Wins!`);
-  } else {
-    alert(`It's a draw!`);
-  }
-}
+    results.textContent = playRound(playerSelection, computerSelection);
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
+  });
+});
 
-game();
+document.querySelector(".reset").addEventListener("click", () => {
+  playerScore = 0;
+  computerScore = 0;
+  playerScoreDisplay.textContent = playerScore;
+  computerScoreDisplay.textContent = computerScore;
+  results.textContent = "Let's Play another game!";
+});
