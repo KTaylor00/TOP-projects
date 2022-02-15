@@ -7,7 +7,29 @@
   height: 700px;
 }
 
-.grid16 {
+.grid {
   display: inline-block;
   background-color: white;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.reset {
+  padding: 10px 30px;
+}
+
+.reset-grid {
+  padding: 10px 30px;
+}
+
+.fill {
+  background-color: black;
 }
