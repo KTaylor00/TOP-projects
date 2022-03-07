@@ -1,0 +1,48 @@
+.container {
+  padding: 6.4rem 3.2rem;
+  margin: auto;
+  max-width: 30rem;
+}
+
+.display-contain {
+  border: 30px solid grey;
+}
+
+.calc-display {
+  text-align: right;
+  padding: 10px 10px 10px 10px;
+  height: 2px;
+  font-size: 20px;
+}
+
+.display {
+  overflow-wrap: break-word;
+  text-align: right;
+  padding: 20px 10px 5px 10px;
+  font-size: 40px;
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.btn {
+  border: 1px solid #fff;
+  padding: 30px;
+  font-size: 30px;
+}
+
+.btn:hover {
+  background-color: lightgrey;
+}
+
+.btn-clear {
+  border-top: none;
+  grid-column: 1 / span 2;
+}
+
+.btn-back {
+  border-top: none;
+  grid-column: 3 / span 2;
+}
