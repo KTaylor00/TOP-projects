@@ -1,0 +1,22 @@
+.book-form {
+  display: none;
+}
+
+.show-book-form {
+  display: block;
+}
+
+.display-book-contain {
+  margin: auto;
+  max-width: 600px;
+}
+
+#display-book {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.read {
+  display: block;
+  margin-bottom: 10px;
+}
